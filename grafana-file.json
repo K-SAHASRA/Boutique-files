@@ -1,0 +1,2751 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "adp6bm84wjr40a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 10,
+        "interval": "5s",
+        "maxDataPoints": 9999999,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.2.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter1}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node1 CPU Usage",
+            "range": true,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter1}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node1 CPU 0 Usage",
+            "range": true,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter1}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node1 CPU 1 Usage",
+            "range": true,
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter2}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node2 CPU Usage",
+            "range": true,
+            "refId": "R"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter2}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node2 CPU 0 Usage",
+            "range": true,
+            "refId": "S"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter2}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node2 CPU 1 Usage",
+            "range": true,
+            "refId": "T"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter3}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node3 CPU Usage",
+            "range": true,
+            "refId": "U"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter3}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node3 CPU 0 Usage",
+            "range": true,
+            "refId": "V"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter3}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node3 CPU 1 Usage",
+            "range": true,
+            "refId": "W"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter4}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node4 CPU Usage",
+            "range": true,
+            "refId": "X"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter4}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node4 CPU 0 Usage",
+            "range": true,
+            "refId": "Y"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter4}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node4 CPU 1 Usage",
+            "range": true,
+            "refId": "Z"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}))*100",
+            "interval": "",
+            "legendFormat": "cartservice CPU Usage",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "checkoutservice CPU Usage",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "currencyservice CPU Usage",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "emailservice CPU Usage",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 1 CPU Usage",
+            "range": true,
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 2 CPU Usage",
+            "range": true,
+            "refId": "NA26"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}))*100",
+            "interval": "",
+            "legendFormat": "loadgenerator CPU Usage",
+            "range": true,
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "paymentservice CPU Usage",
+            "range": true,
+            "refId": "J"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "productcatalogservice CPU Usage",
+            "range": true,
+            "refId": "K"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 1 CPU Usage",
+            "range": true,
+            "refId": "L"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 2 CPU Usage",
+            "range": true,
+            "refId": "NA1"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "redis-cart CPU Usage",
+            "range": true,
+            "refId": "M"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "shippingservice CPU Usage",
+            "range": true,
+            "refId": "N"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_avg_response_time{name=\"Aggregated\"}",
+            "interval": "",
+            "legendFormat": "Average Response Time",
+            "range": true,
+            "refId": "O"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_median_response_time{name=\"Aggregated\"}",
+            "interval": "",
+            "legendFormat": "Median Response Time",
+            "range": true,
+            "refId": "P"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_requests_current_response_time_percentile_95",
+            "interval": "",
+            "legendFormat": "Current Response Time Percentile 95",
+            "refId": "NA2"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_requests_current_response_time_percentile_50",
+            "interval": "",
+            "legendFormat": "Current Response Time Percentile 50",
+            "refId": "NA3"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_users",
+            "interval": "",
+            "legendFormat": "Number of Users",
+            "refId": "Q"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter1}\"} - node_memory_MemAvailable_bytes{job=\"node_exporter\", instance=\"${node_exporter1}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 1 Mem Usage",
+            "range": true,
+            "refId": "NA4"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter2}\"} - node_memory_MemAvailable_bytes{job=\"node_exporter\", instance=\"${node_exporter2}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 2 Mem Usage",
+            "range": true,
+            "refId": "NA21"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter3}\"} - node_memory_MemAvailable_bytes{job=\"node_exporter\", instance=\"${node_exporter3}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 3 Mem Usage",
+            "range": true,
+            "refId": "NA22"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter4}\"} - node_memory_MemAvailable_bytes{job=\"node_exporter\", instance=\"${node_exporter4}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 4 Mem Usage",
+            "range": true,
+            "refId": "NA23"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter1}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 1 Mem Total",
+            "range": true,
+            "refId": "NA5"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter3}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 3 Mem Total",
+            "range": true,
+            "refId": "NA19"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter2}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 2 Mem Total",
+            "range": true,
+            "refId": "NA18"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{job=\"node_exporter\", instance=\"${node_exporter4}\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Host Node 4 Mem Total",
+            "range": true,
+            "refId": "NA20"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"cartservice-${cartservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "cartservice Mem Usage",
+            "range": true,
+            "refId": "NA6"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "checkoutservice Mem Usage",
+            "range": true,
+            "refId": "NA7"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "currencyservice Mem Usage",
+            "range": true,
+            "refId": "AZ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "emailservice Mem Usage",
+            "range": true,
+            "refId": "NA8"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "frontend 1 Mem Usage",
+            "range": true,
+            "refId": "NA9"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "frontend 2 Mem Usage",
+            "range": true,
+            "refId": "NA10"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\",container_label_io_kubernetes_container_name=\"main\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "loadgenerator Mem Usage",
+            "range": true,
+            "refId": "NA11"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "paymentservice Mem Usage",
+            "range": true,
+            "refId": "NA12"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "productcatalogservice Mem Usage",
+            "range": true,
+            "refId": "NA13"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "recommendationservice 1 Mem Usage",
+            "range": true,
+            "refId": "NA14"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "recommendationservice 2 Mem Usage",
+            "range": true,
+            "refId": "NA15"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\",container_label_io_kubernetes_container_name=\"redis\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "redis-cart Mem Usage",
+            "range": true,
+            "refId": "NA16"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\",container_label_io_kubernetes_container_name=\"server\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "shippingservice Mem Usage",
+            "range": true,
+            "refId": "NA17"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_num_requests{name=\"Aggregated\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "locust_requests_num_requests",
+            "range": true,
+            "refId": "AA"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{instance=\"${locust}\",job=\"locust\",method=\"GET\",name=\"/\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /",
+            "range": true,
+            "refId": "AB"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{instance=\"${locust}\",job=\"locust\",method=\"GET\",name=\"/cart\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /cart",
+            "range": true,
+            "refId": "AC"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/0PUK6V6EV0\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/0PUK6V6EV0",
+            "range": true,
+            "refId": "AD"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/1YMWWN1N4O\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/1YMWWN1N4O",
+            "range": true,
+            "refId": "AE"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/2ZYFJ3GM2N\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/2ZYFJ3GM2N",
+            "range": true,
+            "refId": "AF"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/66VCHSJNUP\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/66VCHSJNUP",
+            "range": true,
+            "refId": "AG"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/6E92ZMYYFZ\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/6E92ZMYYFZ",
+            "range": true,
+            "refId": "AH"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/9SIQT8TOJO\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/9SIQT8TOJO",
+            "range": true,
+            "refId": "AI"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/L9ECAV7KIM\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/L9ECAV7KIM",
+            "range": true,
+            "refId": "AJ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/LS4PSXUNUM\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/LS4PSXUNUM",
+            "range": true,
+            "refId": "AK"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/OLJCESPC7Z\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/OLJCESPC7Z",
+            "range": true,
+            "refId": "AL"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/cart\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /cart",
+            "range": true,
+            "refId": "AM"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/cart/checkout\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /cart/checkout",
+            "range": true,
+            "refId": "AN"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/setCurrency\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /setCurrency",
+            "range": true,
+            "refId": "AO"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",name=\"Aggregated\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps Aggregated",
+            "range": true,
+            "refId": "AP"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}))*100",
+            "hide": false,
+            "legendFormat": "Acme-Web CPU Usage",
+            "range": true,
+            "refId": "AQ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}))*100",
+            "hide": false,
+            "legendFormat": "MongoDB CPU Usage",
+            "range": true,
+            "refId": "AR"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\",container_label_io_kubernetes_docker_type=\"container\",}",
+            "hide": false,
+            "legendFormat": "Acme Web Mem Usage",
+            "range": true,
+            "refId": "AS"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\",container_label_io_kubernetes_docker_type=\"container\",}",
+            "hide": false,
+            "legendFormat": "MongoDB  Mem Usage",
+            "range": true,
+            "refId": "AT"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 1 CPU Usage",
+            "range": true,
+            "refId": "AU"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 2 CPU Usage",
+            "range": true,
+            "refId": "AV"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\",container_label_io_kubernetes_docker_type=\"container\",}",
+            "hide": false,
+            "legendFormat": "StressNG 1 Mem Usage",
+            "range": true,
+            "refId": "AW"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\",container_label_io_kubernetes_docker_type=\"container\",}",
+            "hide": false,
+            "legendFormat": "StressNG 2 Mem Usage",
+            "range": true,
+            "refId": "AX"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}))*100",
+            "hide": false,
+            "legendFormat": "Mosquitto CPU Usage",
+            "range": true,
+            "refId": "AY"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}))*100",
+            "hide": false,
+            "legendFormat": "NodeRed CPU Usage",
+            "range": true,
+            "refId": "BA"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}))*100",
+            "hide": false,
+            "legendFormat": "InfluxDB CPU Usage",
+            "range": true,
+            "refId": "BB"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}",
+            "hide": false,
+            "legendFormat": "Mosquitto Mem Usage",
+            "range": true,
+            "refId": "BC"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}",
+            "hide": false,
+            "legendFormat": "NodeRed Mem Usage",
+            "range": true,
+            "refId": "BD"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "container_memory_working_set_bytes{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}",
+            "hide": false,
+            "legendFormat": "InfluxDB Mem Usage",
+            "range": true,
+            "refId": "BE"
+          }
+        ],
+        "title": "All Exp",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "adp6bm84wjr40a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "Acme-Web CPU Usage"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 11,
+        "interval": "5s",
+        "maxDataPoints": 9999999,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.2.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter1}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node1 CPU Usage",
+            "range": true,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter1}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node1 CPU 0 Usage",
+            "range": true,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter1}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node1 CPU 1 Usage",
+            "range": true,
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter2}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node2 CPU Usage",
+            "range": true,
+            "refId": "R"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter2}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node2 CPU 0 Usage",
+            "range": true,
+            "refId": "S"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter2}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node2 CPU 1 Usage",
+            "range": true,
+            "refId": "T"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter3}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node3 CPU Usage",
+            "range": true,
+            "refId": "U"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter3}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node3 CPU 0 Usage",
+            "range": true,
+            "refId": "V"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter3}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node3 CPU 1 Usage",
+            "range": true,
+            "refId": "W"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter4}\", mode=\"idle\"}[5m])) * 100)",
+            "interval": "",
+            "legendFormat": "Avg Host Node4 CPU Usage",
+            "range": true,
+            "refId": "X"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter4}\", cpu=\"0\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node4 CPU 0 Usage",
+            "range": true,
+            "refId": "Y"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "100 - (irate(node_cpu_seconds_total{job=\"node_exporter\",mode=\"idle\", instance=\"${node_exporter4}\", cpu=\"1\"}[5m]) * 100)",
+            "interval": "",
+            "legendFormat": "Host Node4 CPU 1 Usage",
+            "range": true,
+            "refId": "Z"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}))*100",
+            "interval": "",
+            "legendFormat": "cartservice CPU Usage",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "checkoutservice CPU Usage",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "currencyservice CPU Usage",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "emailservice CPU Usage",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 1 CPU Usage",
+            "range": true,
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 2 CPU Usage",
+            "range": true,
+            "refId": "NA26"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}))*100",
+            "interval": "",
+            "legendFormat": "loadgenerator CPU Usage",
+            "range": true,
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "paymentservice CPU Usage",
+            "range": true,
+            "refId": "J"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "productcatalogservice CPU Usage",
+            "range": true,
+            "refId": "K"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 1 CPU Usage",
+            "range": true,
+            "refId": "L"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 2 CPU Usage",
+            "range": true,
+            "refId": "NA1"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "redis-cart CPU Usage",
+            "range": true,
+            "refId": "M"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "shippingservice CPU Usage",
+            "range": true,
+            "refId": "N"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}))*100",
+            "hide": false,
+            "legendFormat": "Acme-Web CPU Usage",
+            "range": true,
+            "refId": "AQ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}))*100",
+            "hide": false,
+            "legendFormat": "MongoDB CPU Usage",
+            "range": true,
+            "refId": "AR"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 1 CPU Usage",
+            "range": true,
+            "refId": "AU"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 2 CPU Usage",
+            "range": true,
+            "refId": "AV"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}))*100",
+            "hide": false,
+            "legendFormat": "Mosquitto CPU Usage",
+            "range": true,
+            "refId": "AY"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}))*100",
+            "hide": false,
+            "legendFormat": "NodeRed CPU Usage",
+            "range": true,
+            "refId": "BA"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}))*100",
+            "hide": false,
+            "legendFormat": "InfluxDB CPU Usage",
+            "range": true,
+            "refId": "BB"
+          }
+        ],
+        "title": "CPU Usage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "adp6bm84wjr40a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "Number of Users"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 12,
+          "x": 0,
+          "y": 14
+        },
+        "id": 12,
+        "interval": "5s",
+        "maxDataPoints": 9999999,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.2.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_avg_response_time{name=\"Aggregated\"}",
+            "interval": "",
+            "legendFormat": "Average Response Time",
+            "range": true,
+            "refId": "O"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_median_response_time{name=\"Aggregated\"}",
+            "interval": "",
+            "legendFormat": "Median Response Time",
+            "range": true,
+            "refId": "P"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_requests_current_response_time_percentile_95",
+            "interval": "",
+            "legendFormat": "Current Response Time Percentile 95",
+            "refId": "NA2"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_requests_current_response_time_percentile_50",
+            "interval": "",
+            "legendFormat": "Current Response Time Percentile 50",
+            "refId": "NA3"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "expr": "locust_users",
+            "interval": "",
+            "legendFormat": "Number of Users",
+            "refId": "Q"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_num_requests{name=\"Aggregated\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "locust_requests_num_requests",
+            "range": true,
+            "refId": "AA"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{instance=\"${locust}\",job=\"locust\",method=\"GET\",name=\"/\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /",
+            "range": true,
+            "refId": "AB"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{instance=\"${locust}\",job=\"locust\",method=\"GET\",name=\"/cart\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /cart",
+            "range": true,
+            "refId": "AC"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/0PUK6V6EV0\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/0PUK6V6EV0",
+            "range": true,
+            "refId": "AD"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/1YMWWN1N4O\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/1YMWWN1N4O",
+            "range": true,
+            "refId": "AE"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/2ZYFJ3GM2N\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/2ZYFJ3GM2N",
+            "range": true,
+            "refId": "AF"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/66VCHSJNUP\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/66VCHSJNUP",
+            "range": true,
+            "refId": "AG"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/6E92ZMYYFZ\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/6E92ZMYYFZ",
+            "range": true,
+            "refId": "AH"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/9SIQT8TOJO\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/9SIQT8TOJO",
+            "range": true,
+            "refId": "AI"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/L9ECAV7KIM\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/L9ECAV7KIM",
+            "range": true,
+            "refId": "AJ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/LS4PSXUNUM\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/LS4PSXUNUM",
+            "range": true,
+            "refId": "AK"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"GET\",name=\"/product/OLJCESPC7Z\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps GET /product/OLJCESPC7Z",
+            "range": true,
+            "refId": "AL"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/cart\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /cart",
+            "range": true,
+            "refId": "AM"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/cart/checkout\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /cart/checkout",
+            "range": true,
+            "refId": "AN"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",method=\"POST\",name=\"/setCurrency\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps POST /setCurrency",
+            "range": true,
+            "refId": "AO"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "locust_requests_current_rps{job=\"locust\",name=\"Aggregated\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "current_rps Aggregated",
+            "range": true,
+            "refId": "AP"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "adp6bm84wjr40a"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node_exporter\", instance=\"${node_exporter4}\", mode=\"idle\"}[5m])) * 100)",
+            "hide": false,
+            "instant": false,
+            "interval": "",
+            "legendFormat": "avg nide 4 cpu usage",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Locust Workload",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "adp6bm84wjr40a"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "Acme-Web CPU Usage"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 12,
+          "x": 12,
+          "y": 14
+        },
+        "id": 13,
+        "interval": "5s",
+        "maxDataPoints": 9999999,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.2.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"cartservice-7964c86448-f5nhr\"}))*100",
+            "interval": "",
+            "legendFormat": "cartservice CPU Usage",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"checkoutservice-${checkoutservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "checkoutservice CPU Usage",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"currencyservice-${currencyservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "currencyservice CPU Usage",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"emailservice-${emailservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "emailservice CPU Usage",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend1}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 1 CPU Usage",
+            "range": true,
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"frontend-${frontend2}\"}))*100",
+            "interval": "",
+            "legendFormat": "frontend 2 CPU Usage",
+            "range": true,
+            "refId": "NA26"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"loadgenerator-${loadgenerator}\"}))*100",
+            "interval": "",
+            "legendFormat": "loadgenerator CPU Usage",
+            "range": true,
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"paymentservice-${paymentservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "paymentservice CPU Usage",
+            "range": true,
+            "refId": "J"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"productcatalogservice-${productcatalogservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "productcatalogservice CPU Usage",
+            "range": true,
+            "refId": "K"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice1}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 1 CPU Usage",
+            "range": true,
+            "refId": "L"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"recommendationservice-${recommendationservice2}\"}))*100",
+            "interval": "",
+            "legendFormat": "recommendationservice 2 CPU Usage",
+            "range": true,
+            "refId": "NA1"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"redis-cart-${rediscartservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "redis-cart CPU Usage",
+            "range": true,
+            "refId": "M"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}[2m]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"shippingservice-${shippingservice}\"}))*100",
+            "interval": "",
+            "legendFormat": "shippingservice CPU Usage",
+            "range": true,
+            "refId": "N"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"acme-web-${acmeweb}\"}))*100",
+            "hide": false,
+            "legendFormat": "Acme-Web CPU Usage",
+            "range": true,
+            "refId": "AQ"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mongodb-${mongodb}\"}))*100",
+            "hide": false,
+            "legendFormat": "MongoDB CPU Usage",
+            "range": true,
+            "refId": "AR"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp1}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 1 CPU Usage",
+            "range": true,
+            "refId": "AU"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}[20s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"probe-app-${probeapp2}\"}))*100",
+            "hide": false,
+            "legendFormat": "StressNG 2 CPU Usage",
+            "range": true,
+            "refId": "AV"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"mosquitto-9c759c54b-2bvwf\"}))*100",
+            "hide": false,
+            "legendFormat": "Mosquitto CPU Usage",
+            "range": true,
+            "refId": "AY"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"nodered-55b864bffd-z8xx7\"}))*100",
+            "hide": false,
+            "legendFormat": "NodeRed CPU Usage",
+            "range": true,
+            "refId": "BA"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Fgci8kFGz"
+            },
+            "editorMode": "code",
+            "expr": "(sum(rate(container_cpu_usage_seconds_total{job=\"cadvisor\",container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}[30s]))/count(container_cpu_load_average_10s{container_label_io_kubernetes_pod_name=\"influxdb-589cddb57b-ffpt6\"}))*100",
+            "hide": false,
+            "legendFormat": "InfluxDB CPU Usage",
+            "range": true,
+            "refId": "BB"
+          }
+        ],
+        "title": "Cadvisor-containers",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "172.31.2.169:9100",
+            "value": "172.31.2.169:9100"
+          },
+          "hide": 0,
+          "name": "node_exporter1",
+          "options": [
+            {
+              "selected": true,
+              "text": "172.31.2.169:9100",
+              "value": "172.31.2.169:9100"
+            }
+          ],
+          "query": "172.31.2.169:9100",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "172.31.20.83:9100",
+            "value": "172.31.20.83:9100"
+          },
+          "hide": 0,
+          "name": "node_exporter2",
+          "options": [
+            {
+              "selected": true,
+              "text": "172.31.20.83:9100",
+              "value": "172.31.20.83:9100"
+            }
+          ],
+          "query": "172.31.20.83:9100",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "172.31.29.133:9100",
+            "value": "172.31.29.133:9100"
+          },
+          "hide": 0,
+          "name": "node_exporter3",
+          "options": [
+            {
+              "selected": true,
+              "text": "172.31.29.133:9100",
+              "value": "172.31.29.133:9100"
+            }
+          ],
+          "query": "172.31.29.133:9100",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "172.31.42.206:9100",
+            "value": "172.31.42.206:9100"
+          },
+          "hide": 0,
+          "name": "node_exporter4",
+          "options": [
+            {
+              "selected": true,
+              "text": "172.31.42.206:9100",
+              "value": "172.31.42.206:9100"
+            }
+          ],
+          "query": "172.31.42.206:9100",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "6bf88c5496-wdndf",
+            "value": "6bf88c5496-wdndf"
+          },
+          "hide": 0,
+          "name": "checkoutservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "6bf88c5496-wdndf",
+              "value": "6bf88c5496-wdndf"
+            }
+          ],
+          "query": "6bf88c5496-wdndf",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "55f95958d5-nmqz6",
+            "value": "55f95958d5-nmqz6"
+          },
+          "hide": 0,
+          "name": "currencyservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "55f95958d5-nmqz6",
+              "value": "55f95958d5-nmqz6"
+            }
+          ],
+          "query": "55f95958d5-nmqz6",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "779468c985-4rc2g",
+            "value": "779468c985-4rc2g"
+          },
+          "hide": 0,
+          "name": "emailservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "779468c985-4rc2g",
+              "value": "779468c985-4rc2g"
+            }
+          ],
+          "query": "779468c985-4rc2g",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "94bd4bd7-2rcvp",
+            "value": "94bd4bd7-2rcvp"
+          },
+          "hide": 0,
+          "name": "frontend1",
+          "options": [
+            {
+              "selected": true,
+              "text": "94bd4bd7-2rcvp",
+              "value": "94bd4bd7-2rcvp"
+            }
+          ],
+          "query": "94bd4bd7-2rcvp",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "94bd4bd7-bhfm6",
+            "value": "94bd4bd7-bhfm6"
+          },
+          "hide": 0,
+          "name": "frontend2",
+          "options": [
+            {
+              "selected": true,
+              "text": "94bd4bd7-bhfm6",
+              "value": "94bd4bd7-bhfm6"
+            }
+          ],
+          "query": "94bd4bd7-bhfm6",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "c57fbc8bb-q9b47",
+            "value": "c57fbc8bb-q9b47"
+          },
+          "hide": 0,
+          "name": "loadgenerator",
+          "options": [
+            {
+              "selected": true,
+              "text": "c57fbc8bb-q9b47",
+              "value": "c57fbc8bb-q9b47"
+            }
+          ],
+          "query": "c57fbc8bb-q9b47",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "7d886f68fd-67gs5",
+            "value": "7d886f68fd-67gs5"
+          },
+          "hide": 0,
+          "name": "paymentservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "7d886f68fd-67gs5",
+              "value": "7d886f68fd-67gs5"
+            }
+          ],
+          "query": "7d886f68fd-67gs5",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "c98749584-zflfv",
+            "value": "c98749584-zflfv"
+          },
+          "hide": 0,
+          "name": "productcatalogservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "c98749584-zflfv",
+              "value": "c98749584-zflfv"
+            }
+          ],
+          "query": "c98749584-zflfv",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "cf7c44cbf-9b2v7",
+            "value": "cf7c44cbf-9b2v7"
+          },
+          "hide": 0,
+          "name": "recommendationservice1",
+          "options": [
+            {
+              "selected": true,
+              "text": "cf7c44cbf-9b2v7",
+              "value": "cf7c44cbf-9b2v7"
+            }
+          ],
+          "query": "cf7c44cbf-9b2v7",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "cf7c44cbf-dbpz9",
+            "value": "cf7c44cbf-dbpz9"
+          },
+          "hide": 0,
+          "name": "recommendationservice2",
+          "options": [
+            {
+              "selected": true,
+              "text": "cf7c44cbf-dbpz9",
+              "value": "cf7c44cbf-dbpz9"
+            }
+          ],
+          "query": "cf7c44cbf-dbpz9",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "7cd77c554d-jxhp7",
+            "value": "7cd77c554d-jxhp7"
+          },
+          "hide": 0,
+          "name": "rediscartservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "7cd77c554d-jxhp7",
+              "value": "7cd77c554d-jxhp7"
+            }
+          ],
+          "query": "7cd77c554d-jxhp7",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "647db5d8d9-r9ghb",
+            "value": "647db5d8d9-r9ghb"
+          },
+          "hide": 0,
+          "name": "shippingservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "647db5d8d9-r9ghb",
+              "value": "647db5d8d9-r9ghb"
+            }
+          ],
+          "query": "84756bb8fb-f9987",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "7b66865965-jrmlb",
+            "value": "7b66865965-jrmlb"
+          },
+          "hide": 0,
+          "name": "cartservice",
+          "options": [
+            {
+              "selected": true,
+              "text": "7b66865965-jrmlb",
+              "value": "7b66865965-jrmlb"
+            }
+          ],
+          "query": "7b66865965-jrmlb",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "172.31.46.219:9646",
+            "value": "172.31.46.219:9646"
+          },
+          "hide": 0,
+          "name": "locust",
+          "options": [
+            {
+              "selected": true,
+              "text": "172.31.46.219:9646",
+              "value": "172.31.46.219:9646"
+            }
+          ],
+          "query": "172.31.46.219:9646",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {},
+          "hide": 0,
+          "name": "mongodb",
+          "options": [],
+          "query": "",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {},
+          "hide": 0,
+          "name": "acmeweb",
+          "options": [],
+          "query": "",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {},
+          "hide": 0,
+          "name": "probeapp1",
+          "options": [],
+          "query": "",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {},
+          "hide": 0,
+          "name": "probeapp2",
+          "options": [],
+          "query": "",
+          "skipUrlSync": false,
+          "type": "textbox"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timeRangeUpdatedDuringEditOrView": false,
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "sk-1",
+    "uid": "bdp6buu73b8qoa",
+    "version": 43,
+    "weekStart": ""
+  }
